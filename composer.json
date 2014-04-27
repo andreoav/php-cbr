@@ -1,0 +1,29 @@
+{
+    "name": "andreoav/php-cbr",
+    "description": "Generic CBR module for PHP",
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andreo Vieira",
+            "email": "andreoav@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Andreoav\\Cbr\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-0": {
+            "Andreoav\\Cbr\\": "tests/"
+        }
+    }
+}

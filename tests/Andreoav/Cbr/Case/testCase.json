@@ -1,0 +1,13 @@
+{
+	"name": "Case Name",
+	"attributes": [
+		{
+			"name": "attr",
+			"weight": 1.0
+		},
+		{
+			"name": "attr2",
+			"weight": 1.6
+		}
+	]
+}
