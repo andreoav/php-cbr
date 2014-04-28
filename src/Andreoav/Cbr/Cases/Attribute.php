@@ -85,4 +85,13 @@ class Attribute
 	{
 		$this->weight = (float) $_weight;
 	}
+
+	/**
+	 * [getWeightnedValue description]
+	 * @return [type] [description]
+	 */
+	public function getWeightnedValue()
+	{
+		return $this->value * $this->weight;
+	}
 }

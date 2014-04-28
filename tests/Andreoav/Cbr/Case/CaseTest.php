@@ -44,7 +44,28 @@ class AbstractCaseTest extends BaseTest
 		$this->assertEquals($cbrcase->getAttributeByName('attr')->getWeight(), 1.0);
 
 		// must be null
-		$this->assertNull($cbrcase->getAttributeByName('otherAttribute'));
-		
+		$this->assertNull($cbrcase->getAttributeByName('otherAttribute'));	
+	}
+
+	public function testGetEuclideanDistance()
+	{
+		$caseOne = new CBRCase;
+		$caseOne->loadCase(__DIR__ . '/testCase.json');
+
+		$caseTwo = new CBRCase;
+		$caseTwo->loadCase(__DIR__ . '/testCase2.json');
+
+		$this->assertEquals($caseOne->getEuclideanDistance($caseTwo), 111.80339887499);
+	}
+
+	public function testGetSimilarity()
+	{
+		$caseOne = new CBRCase;
+		$caseOne->loadCase(__DIR__ . '/testCase.json');
+
+		$caseTwo = new CBRCase;
+		$caseTwo->loadCase(__DIR__ . '/testCase2.json');
+
+		$this->assertEquals($caseOne->getSimilarity($caseTwo), 0.0089442719099992);
 	}
 }

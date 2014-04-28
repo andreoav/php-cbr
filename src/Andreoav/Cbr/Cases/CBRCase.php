@@ -65,4 +65,37 @@ class CBRCase implements CaseInterface
 
 		return null;
 	}
+
+	/**
+	 * [getDistanceBetweenCases description]
+	 * 
+	 * @param  CBRCase $_targetCase [description]
+	 * @return [type]               [description]
+	 */
+	public function getEuclideanDistance(CBRCase $_targetCase)
+	{
+		$_distSum = 0;
+		foreach ($this->attributes as $_attribute)
+		{
+			$_targetAttribute = $_targetCase->getAttributeByName($_attribute->getName());
+
+			// There is an attribute
+			if ($_targetAttribute !== null)
+			{
+				$_absSum = abs($_attribute->getWeightnedValue() - $_targetAttribute->getWeightnedValue());
+				$_distSum += pow($_absSum, 2);
+			}
+		}
+
+		return sqrt($_distSum);
+	}
+
+	public function getSimilarity(CBRCase $_targetCase, $_algorithm = 'EuclideanDistance')
+	{
+		if (method_exists($this, 'get' . $_algorithm))
+		{
+			$_distance = $this->{'get' . $_algorithm}($_targetCase);
+			return $_distance !== 0 ? 1 / $_distance : 1;
+		}
+	}
 }
