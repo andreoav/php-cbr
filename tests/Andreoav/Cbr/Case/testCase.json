@@ -2,12 +2,14 @@
 	"name": "Case Name",
 	"attributes": [
 		{
-			"name": "attr",
-			"weight": 1.0
+			"name"   : "attr",
+			"value"  : 150,
+			"weight" : 1.0
 		},
 		{
-			"name": "attr2",
-			"weight": 1.6
+			"name"   : "attr2",
+			"value"  : 100,
+			"weight" : 1.5
 		}
 	]
 }
