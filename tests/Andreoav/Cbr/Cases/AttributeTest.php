@@ -6,7 +6,7 @@ class AttributeTest extends BaseTest
 {
 	protected $_attribute;
 
-	/*public function __construct()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->_attribute = new Attribute('attr', 100, 1.5);
@@ -48,5 +48,5 @@ class AttributeTest extends BaseTest
 	public function testGetWeightnedValue()
 	{
 		$this->assertEquals($this->_attribute->getWeightnedValue(), 100 * 1.5);
-	}*/
+	}
 }
