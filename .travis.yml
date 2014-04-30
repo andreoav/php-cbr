@@ -5,10 +5,10 @@ php:
    - 5.4
 
 before_script:
-   - alias phpunit=vendor/bin/phpunit
+   - alias custom_phpunit=vendor/bin/phpunit
 
 install:
    - composer install
    - composer dump-autoload
 
-script: phpunit
+script: custom_phpunit
