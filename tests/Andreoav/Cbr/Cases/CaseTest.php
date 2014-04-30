@@ -7,7 +7,7 @@ class AbstractCaseTest extends BaseTest
 	public function testLoadCase()
 	{
 		$cbrcase = new CBRCase;	
-		$cbrcase->loadCase(__DIR__ . '/testCase.json');
+		$cbrcase->loadCase(__DIR__ . '/Json/testCase.json');
 		
 		// Assert case name
 		$this->assertEquals($cbrcase->getName(), 'Case Name');
@@ -28,7 +28,7 @@ class AbstractCaseTest extends BaseTest
 	public function testAttributeByName()
 	{
 		$cbrcase = new CBRCase;
-		$cbrcase->loadCase(__DIR__ . '/testCase.json');
+		$cbrcase->loadCase(__DIR__ . '/Json/testCase.json');
 
 		// Test instance
 		$this->assertInstanceOf('Andreoav\Cbr\Cases\Attribute',
@@ -50,10 +50,10 @@ class AbstractCaseTest extends BaseTest
 	public function testGetEuclideanDistance()
 	{
 		$caseOne = new CBRCase;
-		$caseOne->loadCase(__DIR__ . '/testCase.json');
+		$caseOne->loadCase(__DIR__ . '/Json/testCase.json');
 
 		$caseTwo = new CBRCase;
-		$caseTwo->loadCase(__DIR__ . '/testCase2.json');
+		$caseTwo->loadCase(__DIR__ . '/Json/testCase2.json');
 
 		$this->assertEquals($caseOne->getEuclideanDistance($caseTwo), 111.80339887499);
 	}
@@ -61,10 +61,10 @@ class AbstractCaseTest extends BaseTest
 	public function testGetSimilarity()
 	{
 		$caseOne = new CBRCase;
-		$caseOne->loadCase(__DIR__ . '/testCase.json');
+		$caseOne->loadCase(__DIR__ . '/Json/testCase.json');
 
 		$caseTwo = new CBRCase;
-		$caseTwo->loadCase(__DIR__ . '/testCase2.json');
+		$caseTwo->loadCase(__DIR__ . '/Json/testCase2.json');
 
 		$this->assertEquals($caseOne->getSimilarity($caseTwo), 0.0089442719099992);
 	}

@@ -20,5 +20,10 @@
         "psr-0": {
             "Andreoav\\Cbr\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-0": {
+            "Andreoav\\Cbr\\": "tests/"
+        }
     }
 }
