@@ -6,5 +6,6 @@ php:
 
 install:
    - composer install
+   - composer dump-autoload
 
 script: phpunit
