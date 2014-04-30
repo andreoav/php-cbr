@@ -3,7 +3,7 @@
 /**
  * 
  */
-class CBRCase implements CaseInterface
+class CBRCase
 {
 	protected $name;
 

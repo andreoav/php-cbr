@@ -1,14 +1,11 @@
 <?php namespace Andreoav\Cbr\Cases;
 
+/**
+ * 
+ * Interface to convert classes to a 
+ * CBR Case class
+ * 
+ */
 interface CaseInterface
 {
-	public function loadCase($_filepath);
-
-	public function getName();
-
-	public function setName($_name);
-
-	public function getAttributes();
-
-	public function getAttributeByName($_attrName);
 }

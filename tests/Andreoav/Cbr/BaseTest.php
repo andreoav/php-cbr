@@ -4,10 +4,4 @@ require 'vendor/autoload.php';
 
 use PHPUnit_Framework_TestCase;
 
-class BaseTest extends PHPUnit_Framework_TestCase
-{
-	public function testPHPUnit()
-	{
-		$this->assertTrue(true);
-	}
-}
+abstract class BaseTest extends PHPUnit_Framework_TestCase { /* Abstract */ }
