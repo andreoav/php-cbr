@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/andreoav/php-cbr.svg)](https://travis-ci.org/andreoav/php-cbr)
