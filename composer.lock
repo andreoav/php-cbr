@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "16d9570fa2ced15f8f1c1b3482ffa903",
+    "hash": "a8f138f3c10d8047746879693265db46",
     "packages": [
 
     ],
@@ -258,12 +258,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a702318e713e482a746bc15cea01b61403d7dcdb"
+                "reference": "ae6cefd7cc84586a5ef27e04bae11ee940ec63dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a702318e713e482a746bc15cea01b61403d7dcdb",
-                "reference": "a702318e713e482a746bc15cea01b61403d7dcdb",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ae6cefd7cc84586a5ef27e04bae11ee940ec63dc",
+                "reference": "ae6cefd7cc84586a5ef27e04bae11ee940ec63dc",
                 "shasum": ""
             },
             "require": {
@@ -323,7 +323,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-04-26 05:26:20"
+            "time": "2014-04-30 12:24:19"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -440,6 +440,7 @@
 
     ],
     "platform": {
+        "php": ">=5.4.0",
         "ext-json": "*"
     },
     "platform-dev": [
