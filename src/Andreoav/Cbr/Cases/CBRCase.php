@@ -1,5 +1,8 @@
 <?php namespace Andreoav\Cbr\Cases;
 
+use Andreoav\Cbr\Distances\Distance;
+use Andreoav\Cbr\Exception\CbrException;
+
 /**
  * 
  */
@@ -8,6 +11,8 @@ class CBRCase
 	protected $name;
 
 	protected $attributes = array();
+
+	protected $algorithm = null;
 
 	/**
 	 * Load a case .json file into the system
@@ -49,6 +54,16 @@ class CBRCase
 	}
 
 	/**
+	 * [setAlgorithm description]
+	 * 
+	 * @param Distance $_algorithm [description]
+	 */
+	public function setAlgorithm(Distance $_algorithm)
+	{
+		$this->algorithm = $_algorithm;
+	}
+
+	/**
 	 * [getAttributeByName description]
 	 * @param  [type] $_name [description]
 	 * @return [type]        [description]
@@ -72,8 +87,13 @@ class CBRCase
 	 * @param  CBRCase $_targetCase [description]
 	 * @return [type]               [description]
 	 */
-	public function getEuclideanDistance(CBRCase $_targetCase)
+	public function getDistance(CBRCase $_targetCase)
 	{
+		if ($this->algorithm === null)
+		{
+			throw new CbrException('Distance algorithm not set.');
+		}
+
 		$_distSum = 0;
 		foreach ($this->attributes as $_attribute)
 		{
@@ -82,8 +102,8 @@ class CBRCase
 			// There is an attribute
 			if ($_targetAttribute !== null)
 			{
-				$_absSum = abs($_attribute->getWeightnedValue() - $_targetAttribute->getWeightnedValue());
-				$_distSum += pow($_absSum, 2);
+				$_distSum += $this->algorithm->getDistance($_attribute->getWeightnedValue(),
+					$_targetAttribute->getWeightnedValue());
 			}
 		}
 
@@ -92,10 +112,7 @@ class CBRCase
 
 	public function getSimilarity(CBRCase $_targetCase, $_algorithm = 'EuclideanDistance')
 	{
-		if (method_exists($this, 'get' . $_algorithm))
-		{
-			$_distance = $this->{'get' . $_algorithm}($_targetCase);
-			return $_distance !== 0 ? 1 / $_distance : 1;
-		}
+		$_distance = $this->getDistance($_targetCase);
+		return $_distance === 0 ? 1 : (1 / $_distance);
 	}
 }

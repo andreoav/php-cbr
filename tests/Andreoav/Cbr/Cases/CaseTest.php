@@ -2,6 +2,9 @@
 
 use Andreoav\Cbr\BaseTest;
 
+/**
+ * 
+ */
 class AbstractCaseTest extends BaseTest
 {
 	public function testLoadCase()
@@ -25,14 +28,18 @@ class AbstractCaseTest extends BaseTest
 		$this->assertEquals($cbrcase->getAttributes()[0]->getWeight(), 1.0);
 	}
 
+	/**
+	 * [testAttributeByName description]
+	 * 
+	 * @return [type] [description]
+	 */
 	public function testAttributeByName()
 	{
 		$cbrcase = new CBRCase;
 		$cbrcase->loadCase(__DIR__ . '/Json/testCase.json');
 
 		// Test instance
-		$this->assertInstanceOf('Andreoav\Cbr\Cases\Attribute',
-			$cbrcase->getAttributeByName('attr'));
+		$this->assertInstanceOf('Andreoav\Cbr\Cases\Attribute', $cbrcase->getAttributeByName('attr'));
 
 		// Test attribute name
 		$this->assertEquals($cbrcase->getAttributeByName('attr')->getName(), 'attr');
@@ -47,6 +54,11 @@ class AbstractCaseTest extends BaseTest
 		$this->assertNull($cbrcase->getAttributeByName('otherAttribute'));	
 	}
 
+	/**
+	 * [testGetEuclideanDistance description]
+	 * 
+	 * @return [type] [description]
+	 */
 	public function testGetEuclideanDistance()
 	{
 		$caseOne = new CBRCase;
@@ -55,9 +67,18 @@ class AbstractCaseTest extends BaseTest
 		$caseTwo = new CBRCase;
 		$caseTwo->loadCase(__DIR__ . '/Json/testCase2.json');
 
-		$this->assertEquals($caseOne->getEuclideanDistance($caseTwo), 111.80339887499);
+		// Set Algorithms
+		$caseOne->setAlgorithm(new \Andreoav\Cbr\Distances\EuclideanDistance());
+		$caseTwo->setAlgorithm(new \Andreoav\Cbr\Distances\EuclideanDistance());
+		
+		$this->assertEquals($caseOne->getDistance($caseTwo), 111.80339887499);
 	}
 
+	/**
+	 * [testGetSimilarity description]
+	 * 
+	 * @return [type] [description]
+	 */
 	public function testGetSimilarity()
 	{
 		$caseOne = new CBRCase;
@@ -66,6 +87,10 @@ class AbstractCaseTest extends BaseTest
 		$caseTwo = new CBRCase;
 		$caseTwo->loadCase(__DIR__ . '/Json/testCase2.json');
 
+		// Set Algorithms
+		$caseOne->setAlgorithm(new \Andreoav\Cbr\Distances\EuclideanDistance());
+		$caseTwo->setAlgorithm(new \Andreoav\Cbr\Distances\EuclideanDistance());
+		
 		$this->assertEquals($caseOne->getSimilarity($caseTwo), 0.0089442719099992);
 	}
 }
