@@ -1,1 +1,2 @@
-[![Build Status](https://travis-ci.org/andreoav/php-cbr.svg)](https://travis-ci.org/andreoav/php-cbr)
+[![Build Status](https://travis-ci.org/andreoav/php-cbr.svg?branch=development)](https://travis-ci.org/andreoav/php-cbr)
+[![Coverage Status](https://coveralls.io/repos/andreoav/php-cbr/badge.png?branch=development)](https://coveralls.io/r/andreoav/php-cbr?branch=development)
