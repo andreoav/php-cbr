@@ -94,19 +94,6 @@ class CBRCase
             throw new CbrException('Distance algorithm not set.');
         }
 
-        /*$_distSum = 0;
-        foreach ($this->attributes as $_attribute)
-        {
-            $_targetAttribute = $_targetCase->getAttributeByName($_attribute->getName());
-
-            // There is an attribute
-            if ($_targetAttribute !== null)
-            {
-                $_distSum += $this->algorithm->getDistance($_attribute->getWeightnedValue(),
-                    $_targetAttribute->getWeightnedValue());
-            }
-        }*/
-
         return $this->algorithm->getDistance($this, $_targetCase);
     }
 

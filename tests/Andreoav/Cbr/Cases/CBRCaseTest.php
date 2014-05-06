@@ -29,6 +29,19 @@ class AbstractCaseTest extends BaseTest
         $this->assertEquals($cbrcase->getAttributes()[0]->getWeight(), 1.0);
     }
 
+    public function testSetName()
+    {
+        $cbrcase = new CBRCase;
+        $cbrcase->loadCase(__DIR__ . '/Json/testCase.json');
+
+        $cbrcase->setName('New Name');
+
+        // Assert case name
+        $this->assertEquals($cbrcase->getName(), 'New Name');
+    }
+
+
+
     /**
      * [testAttributeByName description]
      * 
