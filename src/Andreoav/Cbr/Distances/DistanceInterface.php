@@ -1,7 +1,9 @@
 <?php namespace Andreoav\Cbr\Distances;
 
+use Andreoav\Cbr\Cases\CBRCase;
+
 interface DistanceInterface {
 
-	public function getDistance($p1, $p2);
+    public function getDistance(CBRCase $sourceCase, CBRCase $targetCase);
 
 }

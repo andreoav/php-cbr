@@ -5,5 +5,5 @@ use Andreoav\Cbr\Cases\Attribute;
 
 class Cbr
 {
-	
+    
 }

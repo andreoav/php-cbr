@@ -1,9 +1,31 @@
 <?php namespace Andreoav\Cbr\Distances;
 
+use Andreoav\Cbr\Cases\CBRCase;
+
 class ManhattanDistance extends Distance
 {
-	public function getDistance($p1, $p2)
-	{
-		return abs($p1 - $p2);
-	}
+    public function getDistance(CBRCase $sourceCase, CBRCase $targetCase)
+    {
+        //return abs($sourceCase - $targetCase);    
+
+        $totalDistance = 0;
+        foreach ($sourceCase->getAttributes() as $sourceAttribute)
+        {
+            $targetAttribute = $targetCase->getAttributeByName($sourceAttribute->getName());
+
+            // There is an attribute
+            if ($targetAttribute !== null)
+            {
+                $totalDistance += $this->getLocalDistance($sourceAttribute->getWeightnedValue(),
+                    $targetAttribute->getWeightnedValue());
+            }
+        }
+
+        return $totalDistance;
+    }
+
+    protected function getLocalDistance($value1, $value2)
+    {
+        return abs($value1 - $value2);
+    }
 }

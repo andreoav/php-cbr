@@ -1,10 +1,12 @@
 <?php namespace Andreoav\Cbr\Distances;
 
-abstract class Distance implements DistanceInterface {	
+use Andreoav\Cbr\Cases\CBRCase;
+use Andreoav\Cbr\Exception\CbrException;
 
-    public function getDistance($p1, $p2)
-    {
-        return abs($p1 - $p2);
-    }
+abstract class Distance implements DistanceInterface {  
+
+    public abstract function getDistance(CBRCase $sourceCase, CBRCase $targetCase);
+
+    protected abstract function getLocalDistance($value1, $value2);
 
 }
