@@ -1,6 +1,7 @@
 <?php namespace Andreoav\Cbr\Cases;
 
 use Andreoav\Cbr\BaseTest;
+use Andreoav\Cbr\Exception\CbrException;
 
 /**
  * 
@@ -55,9 +56,26 @@ class AbstractCaseTest extends BaseTest
     }
 
     /**
-     * [testGetEuclideanDistance description]
+     * CBRCase::getDistance() must throw an exception if
+     * used without setting an algorithm.
      * 
-     * @return [type] [description]
+     * @expectedException \Andreoav\Cbr\Exception\CbrException
+     */
+    public function testAlgorithmNull()
+    {
+        $caseOne = new CBRCase;
+        $caseOne->loadCase(__DIR__ . '/Json/testCase.json');
+
+        $caseTwo = new CBRCase;
+        $caseTwo->loadCase(__DIR__ . '/Json/testCase2.json');
+
+        // Get distance without setting an algorithm
+        $caseOne->getDistance($caseTwo);
+    }
+
+    /**
+     * CBRCase::getDistance() test using the Euclidean Distance
+     * algorithm.
      */
     public function testGetEuclideanDistance()
     {
@@ -75,6 +93,10 @@ class AbstractCaseTest extends BaseTest
         $this->assertEquals($caseOne->getDistance($caseTwo), 111.80339887499);
     }
 
+    /**
+     * CBRCase::getDistance() test using the Manhattan Distance
+     * algorithm.
+     */
     public function testManhattanDistance()
     {
         $caseOne = new CBRCase;

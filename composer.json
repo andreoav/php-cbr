@@ -1,9 +1,6 @@
 {
     "name": "andreoav/php-cbr",
     "description": "Generic CBR module for PHP",
-    "require-dev": {
-        "phpunit/phpunit": "3.7.*"
-    },
     "license": "MIT",
     "authors": [
         {
@@ -15,6 +12,10 @@
     "require": {
         "php": ">=5.4.0",
         "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "satooshi/php-coveralls": "dev-master"
     },
     "autoload": {
         "psr-0": {
