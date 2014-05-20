@@ -2,8 +2,8 @@
 
 use Andreoav\Cbr\Cases\CBRCase;
 
-class ManhattanDistance extends Distance
-{
+class ManhattanDistance extends Distance {
+
     public function getDistance(CBRCase $sourceCase, CBRCase $targetCase)
     {
         //return abs($sourceCase - $targetCase);    
@@ -16,8 +16,8 @@ class ManhattanDistance extends Distance
             // There is an attribute
             if ($targetAttribute !== null)
             {
-                $totalDistance += $this->getLocalDistance($sourceAttribute->getWeightnedValue(),
-                    $targetAttribute->getWeightnedValue());
+                $totalDistance += $this->getLocalDistance($sourceAttribute->getWeightedValue(),
+                    $targetAttribute->getWeightedValue());
             }
         }
 

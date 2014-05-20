@@ -2,18 +2,12 @@
 
 use Andreoav\Cbr\Cases\CBRCase;
 
-/**
- * 
- */
-class EuclideanDistance extends Distance
-{
+class EuclideanDistance extends Distance {
 
     /**
-     * [getDistance description]
-     * 
-     * @param  [type] $firstValue [description]
-     * @param  [type] $secondValue [description]
-     * @return [type]     [description]
+     * @param CBRCase $sourceCase
+     * @param CBRCase $targetCase
+     * @return float
      */
     public function getDistance(CBRCase $sourceCase, CBRCase $targetCase)
     {
@@ -25,8 +19,8 @@ class EuclideanDistance extends Distance
             // There is an attribute
             if ($targetAttribute !== null)
             {
-                $totalDistance += $this->getLocalDistance($sourceAttribute->getWeightnedValue(),
-                    $targetAttribute->getWeightnedValue());
+                $totalDistance += $this->getLocalDistance($sourceAttribute->getWeightedValue(),
+                    $targetAttribute->getWeightedValue());
             }
         }
 
