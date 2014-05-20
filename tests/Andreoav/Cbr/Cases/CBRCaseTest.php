@@ -134,15 +134,15 @@ class AbstractCaseTest extends BaseTest
     public function testGetSimilarity()
     {
         $caseOne = new CBRCase;
-        $caseOne->loadCase(__DIR__ . '/Json/testCase.json');
+        $caseOne->loadCase(__DIR__ . '/Json/recipes/recipe1.json');
 
         $caseTwo = new CBRCase;
-        $caseTwo->loadCase(__DIR__ . '/Json/testCase2.json');
+        $caseTwo->loadCase(__DIR__ . '/Json/recipes/recipe2.json');
 
         // Set Algorithms
-        $caseOne->setAlgorithm(new \Andreoav\Cbr\Distances\EuclideanDistance());
+        $caseOne->setAlgorithm(new \Andreoav\Cbr\Distances\ManhattanDistance());
         $caseTwo->setAlgorithm(new \Andreoav\Cbr\Distances\EuclideanDistance());
-        
+
         // Must be 0.0089442719099992
         $this->assertEquals($caseOne->getSimilarity($caseTwo), 0.0089442719099992);
     }
