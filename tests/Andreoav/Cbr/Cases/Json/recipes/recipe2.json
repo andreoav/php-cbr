@@ -1,0 +1,35 @@
+{
+	"name": "Escondidinho Carne Seca",
+	"attributes": [
+		{
+			"name"    : "mandioca_cozida",
+			"value"   : 1,
+			"weight"  : 5,
+			"details" : "" 
+		},
+		{
+			"name"    : "creme_de_leite",
+			"value"   : 1,
+			"weight"  : 4,
+			"details" : "" 
+		},
+		{
+			"name"    : "margarina",
+			"value"   : 2,
+			"weight"  : 4,
+			"details" : "" 
+		},
+		{
+			"name"    : "carne_seca",
+			"value"   : 1,
+			"weight"  : 5,
+			"details" : "" 
+		},
+		{
+			"name"    : "cebola",
+			"value"   : 1,
+			"weight"  : 3,
+			"details" : "Média picada" 
+		}
+	]
+}

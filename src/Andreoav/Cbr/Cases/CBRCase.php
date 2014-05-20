@@ -100,6 +100,6 @@ class CBRCase
     public function getSimilarity(CBRCase $_targetCase, $_algorithm = 'EuclideanDistance')
     {
         $_distance = $this->getDistance($_targetCase);
-        return $_distance === 0 ? 1 : (1 / $_distance);
+        return $_distance == 0 ? 1.0 : (1.0 / $_distance);
     }
 }
