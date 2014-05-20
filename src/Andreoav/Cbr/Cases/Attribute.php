@@ -20,10 +20,11 @@ class Attribute
      */
     protected $value;
 
+
     /**
-     * [__construct description]
-     * @param [type] $_name   [description]
-     * @param [type] $_weight [description]
+     * @param $_name
+     * @param int $_value
+     * @param float $_weight
      */
     public function __construct($_name, $_value = 1, $_weight = 1.0)
     {
@@ -51,8 +52,7 @@ class Attribute
     }
 
     /**
-     * [getValue description]
-     * @return [type] [description]
+     * @return int
      */
     public function getValue()
     {
@@ -69,8 +69,7 @@ class Attribute
     }
 
     /**
-     * [getWeight description]
-     * @return [type] [description]
+     * @return float
      */
     public function getWeight()
     {
@@ -78,8 +77,7 @@ class Attribute
     }
 
     /**
-     * [getWeight description]
-     * @return [type] [description]
+     * @param $_weight
      */
     public function setWeight($_weight)
     {
@@ -87,8 +85,7 @@ class Attribute
     }
 
     /**
-     * [getWeightnedValue description]
-     * @return [type] [description]
+     * @return int
      */
     public function getWeightnedValue()
     {
