@@ -12,7 +12,7 @@ class CBRCase
 
     protected $attributes = array();
 
-    protected $algorithm = null;
+    protected $algorithm;
 
     /**
      * Load a case .json file into the system

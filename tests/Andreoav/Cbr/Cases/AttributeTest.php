@@ -47,6 +47,6 @@ class AttributeTest extends BaseTest
 
 	public function testGetWeightnedValue()
 	{
-		$this->assertEquals($this->_attribute->getWeightnedValue(), 100 * 1.5);
+		$this->assertEquals($this->_attribute->getWeightedValue(), 100 * 1.5);
 	}
 }

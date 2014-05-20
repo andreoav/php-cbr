@@ -1,7 +1,7 @@
 <?php namespace Andreoav\Cbr\Cases;
 
-class Attribute
-{
+class Attribute {
+
     /**
      * [$name description]
      * @var [type]
@@ -22,14 +22,14 @@ class Attribute
 
 
     /**
-     * @param $_name
-     * @param int $_value
+     * @param       $_name
+     * @param int   $_value
      * @param float $_weight
      */
     public function __construct($_name, $_value = 1, $_weight = 1.0)
     {
-        $this->name   = $_name;
-        $this->value  = $_value;
+        $this->name = $_name;
+        $this->value = $_value;
         $this->weight = (float) $_weight;
     }
 
@@ -87,7 +87,7 @@ class Attribute
     /**
      * @return int
      */
-    public function getWeightnedValue()
+    public function getWeightedValue()
     {
         return $this->value * $this->weight;
     }
